@@ -23,9 +23,9 @@ function hitwalls(){
  
 function end() {
      if(result) {
-     	alert("You win! :)");
+     	document.getElementById('status').innerHTML ='You win';
     } else {
-         alert("Sorry, you lost. :(");
+         document.getElementById('status').innerHTML ='YOU lose';
     }
   } 
 
