@@ -3,13 +3,16 @@ window.onload = mouseover;
 var result = true;
 
 function mouseover(){
- 	var win =document.getElementById('end');
+ 	var stop = document.getElementById('end');
+ 	stop.setAttribute('onmouseover','end()');
+ 	var go = document.getElementById('start');
+ 	go.setAttribute('onclick','start()');
   	var border = document.querySelectorAll('div.boundary');
   	for (var i =0; i <5; i++) {
   		border[i].setAttribute('onmouseover','hitwalls()');
   		}
-  		win.setAttribute('onmouseover','end()');
-  	}
+  		   	}
+
 function hitwalls(){
 	result = false;
 	var border = document.querySelectorAll('div.boundary');
@@ -24,4 +27,12 @@ function end() {
     } else {
          alert("Sorry, you lost. :(");
     }
+  } 
+
+  function start() {
+ 	result = true;
+ 	var border =document.querySelectorAll('div.boundary');
+ 	for (var i =0; i <=4; i++) {
+ 		border[i].setAttribute('style','background-color: lightgrey');
+ 	}
   } 
